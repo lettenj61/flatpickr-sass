@@ -1,0 +1,5 @@
+baseURL = "http://lettenj61.github.io/flatpickr-sass"
+languageCode = "en-us"
+title = "Flatpickr Sass"
+
+disableKinds = []

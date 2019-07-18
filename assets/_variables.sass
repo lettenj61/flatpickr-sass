@@ -1,0 +1,44 @@
+$bezier: cubic-bezier(0.23, 1, 0.32, 1)
+$slide-time: 400ms
+
+
+
+// calendar width calculation
+$no-calendar-border: false !default
+
+$day-size: 39px
+$padding: ($day-size/16)
+$day-margin: 2px
+$days-width: ($day-size*7 + $day-margin*14 + $padding*2 + 2)
+$calendar-width: $days-width
+
+$month-nav-height: 34px !default
+$weekdays-height: 28px !default
+$time-height: 40px
+
+
+
+// Colors
+$calendar-background: #ffffff !default
+$calendar-border-color: #e6e6e6 !default
+
+$month-foreground: adjust-color(#000000, $alpha: -0.1) !default
+$arrow-hover-color: #f64747 !default
+
+$month-background: transparent !default
+
+$weekdays-background: transparent !default
+$weekdays-foreground: adjust-color(#000000, $alpha: -0.46) !default
+
+$day-foreground: #393939 !default
+$day-hover-background: #e6e6e6 !default
+
+$today-color: #959ea9 !default
+$today-fg-color: white !default
+$selected-color-foreground: white !default
+$selected-day-background: #569FF7 !default
+
+$disabled-border-color: transparent !default
+
+$inverted-bg: invert($calendar-background)
+

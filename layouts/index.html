@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  {{- $sass := "light.sass" -}}
+  {{- $options := (dict "targetPath" "flatpickr.css" "outputStyle" "expanded") -}}
+  {{- $css := resources.Get $sass | resources.ToCSS $options }}
+  {{ printf "<!-- %s -->" $css.Permalink | safeHTML }}
+  {{- $options = (dict "targetPath" "flatpickr.min.css" "outputStyle" "compressed") -}}
+  {{- $cssMinified := resources.Get $sass | resources.ToCSS $options }}
+  <link rel="stylesheet" href="{{$cssMinified.Permalink}}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.1/flatpickr.min.js" integrity="sha256-HkXTlHqfxp/zaiVFswfHkKF0ptfUxMyLiNj1s/6Vy68=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h1>Ready!</h1>
+  <hr>
+  <div class="fields">
+    <input type="text" id="date-picker">
+  </div>
+  <script>
+    flatpickr('#date-picker', {});
+  </script>
+</body>
+</html>
